@@ -1,0 +1,38 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix csw: <http://semantic-web.at/ontologies/csw.owl#> .
+@prefix ctag: <http://commontag.org/ns#> .
+@prefix opencyc: <http://sw.opencyc.org/concept/> .
+@prefix freebase: <http://rdf.freebase.com/ns/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tags: <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cyc: <http://sw.cyc.com/concept/> .
+@prefix cycAnnot: <http://sw.cyc.com/CycAnnotations_v1#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+# RDF data export created by PoolParty.
+# This file contains a hierarchical subtree of a SKOS thesaurus.
+# Export date: Mon Oct 30 11:58:39 CET 2023
+
+<https://data.cultureelerfgoed.nl/term/id/cht/thesaurus> {
+csw:hierarchyRootType skos:Concept;
+skos:scopeNote "Alle artikelen van cementbeton die in massa of serie in een fabriek worden vervaardigd ( prefabricage), zoals stenen, tegels en trottoirbanden. Ook behoren hiertoe de betonelementen. claustra. (Haslinghuis)"@nl;
+<http://schema.semantic-web.at/ppt/inSubtree> <https://data.cultureelerfgoed.nl/term/id/cht/aa872ce6-a74c-4f81-96ec-6ee0e717f92a>;
+<http://schema.semantic-web.at/ppt/NLP/corpusStatistic> <https://data.cultureelerfgoed.nl/term/id/cht/convertedBNode/genid-fa3d3977ef30455b82fa2875b09b3bba-2ED5CABCDFCE5BAE0DB50D1144FB4DA1>;
+a skos:Concept,<https://data.cultureelerfgoed.nl/vocab/id/cht#CHTconcept>;
+dcterms:created "2016-09-30T12:45:22.000Z"^^xsd:dateTime;
+dcterms:creator <https://cultureelerfgoed.poolparty.biz/user/moutp>,<https://cultureelerfgoed.poolparty.biz/user/superadmin>;
+skos:prefLabel "Betonwaren"@de,"concrete wares"@en,"articles de béton"@fr,"betonwaren"@nl;
+skos:inScheme <https://data.cultureelerfgoed.nl/term/id/cht/b532325c-dc08-49db-b4f1-15e53b037ec3> .
+<https://data.cultureelerfgoed.nl/term/id/cht/b532325c-dc08-49db-b4f1-15e53b037ec3> a skos:ConceptScheme;
+dcterms:title "Cultuurhistorische Thesaurus"@nl;
+dcterms:created "2017-04-26T06:46:32.000Z"^^xsd:dateTime;
+dcterms:creator <https://digitaalerfgoed.poolparty.biz/user/moutp> .
+<https://data.cultureelerfgoed.nl/term/id/cht/4869932e-3f55-4e35-977b-a03bc37135dc> <https://data.cultureelerfgoed.nl/vocab/id/rce#hasConceptStatus> <https://data.cultureelerfgoed.nl/term/id/cht/c58475d5-0795-4623-b4be-ea1524f4b4fb>;
+<https://data.cultureelerfgoed.nl/vocab/id/rce#hasSource> <https://data.cultureelerfgoed.nl/term/id/cht/95d57860-0030-418b-9d0f-4ec45fec76c5> .
+}

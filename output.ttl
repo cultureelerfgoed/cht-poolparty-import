@@ -1,0 +1,13 @@
+@prefix ns1: <http://schema.semantic-web.at/ppt/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.cultureelerfgoed.nl/term/id/cht/337b9cec-53dc-43a7-bab6-582fef46f724> a skos:Concept ;
+    ns1:inSubtree <https://data.cultureelerfgoed.nl/term/id/cht/aa7202ac-68c8-4d29-9310-0421ca975837> ;
+    skos:altLabel "testenterm"@nl ;
+    skos:broader <https://data.cultureelerfgoed.nl/term/id/cht/aa7202ac-68c8-4d29-9310-0421ca975837> ;
+    skos:inScheme <https://data.cultureelerfgoed.nl/term/id/cht/b532325c-dc08-49db-b4f1-15e53b037ec3> ;
+    skos:prefLabel "testterm"@nl ;
+    skos:scopeNote "import test om excel naar ttl import te testen"@nl .
+
+<https://data.cultureelerfgoed.nl/term/id/cht/b532325c-dc08-49db-b4f1-15e53b037ec3> a skos:ConceptScheme .
+

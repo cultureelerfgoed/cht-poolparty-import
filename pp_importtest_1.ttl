@@ -1,0 +1,6 @@
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://www.w3.org/2004/02/skos/core#altLabel> "importtest"@nl .
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://schema.semantic-web.at/ppt/inSubtree> <https://data.cultureelerfgoed.nl/term/id/cht/aa7202ac-68c8-4d29-9310-0421ca975837> .
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.cultureelerfgoed.nl/term/id/cht/b532325c-dc08-49db-b4f1-15e53b037ec3> .
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://www.w3.org/2004/02/skos/core#prefLabel> "testterm"@nl .
+<https://data.cultureelerfgoed.nl/term/id/cht/f35f9f7f-c9bc-4d7e-8446-1912bb67d5x9> <http://www.w3.org/2004/02/skos/core#scopeNote>  "import test om excel naar ttl import te testen"@nl .
