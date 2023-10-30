@@ -22,6 +22,7 @@ def create_rdf_triples(row):
     g.add((term_uri, SKOS.inScheme, CULTUREELERFGOED["b532325c-dc08-49db-b4f1-15e53b037ec3"]))
     g.add((CULTUREELERFGOED["b532325c-dc08-49db-b4f1-15e53b037ec3"], RDF.type, SKOS.ConceptScheme))
     g.add((term_uri, SKOS.broader, broader_term_uri))
+    g.add((broader_term_uri, SKOS.narrower, term_uri))
     g.add((term_uri, SKOS.prefLabel, Literal(row['term'], lang="nl")))
     g.add((term_uri, SKOS.scopeNote, Literal(row['beschrijving'], lang="nl")))
     g.add((term_uri, SKOS.altLabel, Literal(row['alternatief'], lang="nl")))
