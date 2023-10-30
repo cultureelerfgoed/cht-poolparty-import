@@ -26,7 +26,7 @@ def create_rdf_triples(row):
     g.add((term_uri, SKOS.prefLabel, Literal(row['term'], lang="nl")))
     g.add((term_uri, SKOS.scopeNote, Literal(row['beschrijving'], lang="nl")))
     g.add((term_uri, SKOS.altLabel, Literal(row['alternatief'], lang="nl")))
-        # to do: add multiple altlabels; add related terms with URI's if possible; concept status
+        # to do: add multiple altlabels; add related terms with URI's if possible; add concept status
 
 # Load the XLSX file
 xlsx_file = 'C:\\Users\\Ruben\\Documents\\05. RCE\\CHT\\cht-poolparty-import\\test_import_pp.xlsx'
