@@ -4,6 +4,7 @@ from rdflib.namespace import RDF, SKOS
 import uuid
 from rdflib import query
 import requests
+import datetime
 
 
 # Create an RDF graph
@@ -48,6 +49,7 @@ def create_rdf_triples(row):
     # Handle multiple related terms
     related_terms = row['gerelateerd'].split("|")
     for related_term in related_terms:
+        related_term  = related_term.strip()
         related_uri = fetch_uri(related_term)
         if related_uri:
             g.add((term_uri, SKOS.related, URIRef(related_uri)))
@@ -92,8 +94,17 @@ for row in sheet.iter_rows(min_row=2, values_only=True):
 # Serialize the RDF graph to Turtle format
 ttl_output = g.serialize(format='turtle')
 
-# Save the TTL data to a file
-with open('output.ttl', 'w') as output_file:
+# Get the current date and time
+current_datetime = datetime.datetime.now()
+
+# Format the date and time as a string
+formatted_datetime = current_datetime.strftime("%Y%m%d_%H%M%S")
+
+# Define the file name with the formatted date and time
+output_filename = f"cht_addition_{formatted_datetime}.ttl"
+
+# Save the TTL data to the file
+with open(output_filename, 'w') as output_file:
     output_file.write(ttl_output)
 
-print("TTL conversion completed. Check 'output.ttl'.")
+print(f"TTL conversion completed. Check '{output_filename}'.")

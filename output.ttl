@@ -1,7 +1,7 @@
 @prefix ns1: <http://schema.semantic-web.at/ppt/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://data.cultureelerfgoed.nl/term/id/cht/c516ed28-ff8e-4629-8b74-c4cc3c8b78d0> a skos:Concept ;
+<https://data.cultureelerfgoed.nl/term/id/cht/d7aa21c9-3462-4cf2-84ee-809a432d3545> a skos:Concept ;
     ns1:inSubtree <https://data.cultureelerfgoed.nl/term/id/cht/aa7202ac-68c8-4d29-9310-0421ca975837> ;
     skos:altLabel "alternatief2"@nl,
         "testenterm"@nl ;
