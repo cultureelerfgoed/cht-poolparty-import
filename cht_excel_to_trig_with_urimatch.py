@@ -26,7 +26,7 @@ def create_rdf_triples(row):
     related_uri = None
 
 # Lookup URI for the "broader_term"
-    broader_uri = fetch_broader_uri(row['broader_term'])
+    broader_uri = fetch_uri(row['broader_term'])
 
     # Create the RDF triples in the specified graph
     g.add((term_uri, RDF.type, SKOS.Concept))
@@ -36,7 +36,7 @@ def create_rdf_triples(row):
     g.add((term_uri, SKOS.broader, URIRef(broader_uri)))
     g.add((term_uri, SKOS.prefLabel, Literal(row['term'], lang="nl")))
     g.add((term_uri, SKOS.scopeNote, Literal(row['beschrijving'], lang="nl")))
-
+    
     # Handle multiple altLabels
     if "|" in row['alternatief']:
         alt_labels = row['alternatief'].split("|")
@@ -45,36 +45,27 @@ def create_rdf_triples(row):
             g.add((term_uri, SKOS.altLabel, Literal(alt_label, lang="nl")))
     else:
         g.add((term_uri, SKOS.altLabel, Literal(row['alternatief'], lang="nl")))
-  
-   # if related_uri:
-    #    g.add((term_uri, SKOS.related, URIRef(related_uri)))
+    # Handle multiple related terms
+    related_terms = row['gerelateerd'].split("|")
+    for related_term in related_terms:
+        related_uri = fetch_uri(related_term)
+        if related_uri:
+            g.add((term_uri, SKOS.related, URIRef(related_uri)))
 
 # Split the "gerelateerd" string by "|"
     related_terms = row['gerelateerd'].split("|")
 
     # Query the API to fetch the URI for each related term
     for related_term in related_terms:
-        related_uri = fetch_related_uri(related_term)
+        related_uri = fetch_uri(related_term)
         if related_uri:
             g.add((term_uri, SKOS.related, URIRef(related_uri)))
 
 # Function to make an API call to fetch the URI for a term
-def fetch_related_uri(gerelateerd_term):
-    params = {"term": gerelateerd_term}
-    response = requests.get(API_ENDPOINT, params=params)
-
-    if response.status_code == 200:
-        data = response.json()
-        if isinstance(data, list) and len(data) > 0:
-            first_item = data[0]
-            return first_item.get("uri")
-
-    return None
-
-# Function to make an API call to fetch the URI for a broader term
-def fetch_broader_uri(term):
+def fetch_uri(term):
+    endpoint = API_ENDPOINT  # Use the same endpoint for both broader and related terms
     params = {"term": term}
-    response = requests.get(API_ENDPOINT, params=params)
+    response = requests.get(endpoint, params=params)
     if response.status_code == 200:
         data = response.json()
         if isinstance(data, list) and len(data) > 0:
