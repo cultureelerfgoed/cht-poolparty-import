@@ -25,8 +25,17 @@ def create_rdf_triples(row):
     g.add((broader_term_uri, SKOS.narrower, term_uri))
     g.add((term_uri, SKOS.prefLabel, Literal(row['term'], lang="nl")))
     g.add((term_uri, SKOS.scopeNote, Literal(row['beschrijving'], lang="nl")))
-    g.add((term_uri, SKOS.altLabel, Literal(row['alternatief'], lang="nl")))
-        # to do: add multiple altlabels; add related terms with URI's if possible; add concept status
+        # add related terms with URI's if possible; add concept status
+
+        
+         # Handle multiple altLabels
+    if "|" in row['alternatief']:
+        alt_labels = row['alternatief'].split("|")
+        for alt_label in alt_labels:
+            alt_label = alt_label.strip()  # Remove leading/trailing spaces
+            g.add((term_uri, SKOS.altLabel, Literal(alt_label, lang="nl")))
+    else:
+        g.add((term_uri, SKOS.altLabel, Literal(row['alternatief'], lang="nl")))
 
 # Load the XLSX file
 xlsx_file = 'C:\\Users\\Ruben\\Documents\\05. RCE\\CHT\\cht-poolparty-import\\test_import_pp.xlsx'
